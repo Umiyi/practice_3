@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lab 3 — YouTube (Flexbox)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="yt-header">
+    <div class="yt-header__left">
+      <button class="icon-btn" id="btnMenu" aria-label="Menu">
+        <!-- hamburger -->
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z"/></svg>
+      </button>
+
+      <a class="logo" href="#">
+        <span class="logo__mark">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 15V9l6 3-6 3z"/></svg>
+        </span>
+        <span class="logo__text">YouTube</span>
+      </a>
+    </div>
+
+    <div class="yt-header__center">
+      <div class="search">
+        <input class="search__input" type="text" placeholder="Пошук" />
+        <button class="search__btn" aria-label="Search">
+          <svg viewBox="0 0 24 24"><path d="M10 4a6 6 0 104.472 10.01l4.259 4.26 1.414-1.415-4.26-4.258A6 6 0 0010 4zm0 2a4 4 0 110 8 4 4 0 010-8z"/></svg>
+        </button>
+      </div>
+      <button class="icon-btn icon-btn--circle" aria-label="Voice search">
+        <svg viewBox="0 0 24 24"><path d="M12 14a3 3 0 003-3V6a3 3 0 10-6 0v5a3 3 0 003 3zm5-3a5 5 0 01-10 0H5a7 7 0 0014 0h-2zM11 19v3h2v-3h-2z"/></svg>
+      </button>
+    </div>
+
+    <div class="yt-header__right">
+      <button class="icon-btn" aria-label="Create">
+        <svg viewBox="0 0 24 24"><path d="M19 10h-3V7h-2v3h-3v2h3v3h2v-3h3v-2zM5 6h10v2H5V6zm0 5h6v2H5v-2zm0 5h10v2H5v-2z"/></svg>
+      </button>
+      <button class="icon-btn" aria-label="Notifications">
+        <svg viewBox="0 0 24 24"><path d="M12 22a2 2 0 002-2h-4a2 2 0 002 2zm6-6V11a6 6 0 10-12 0v5L4 18v1h16v-1l-2-2z"/></svg>
+      </button>
+
+      <button class="avatar" aria-label="Profile">V</button>
+    </div>
+  </header>
+
+  <!-- BODY -->
+  <div class="app">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <nav class="side">
+        <a class="side__item side__item--active" href="#">
+          <span class="side__icon">
+            <svg viewBox="0 0 24 24"><path d="M12 3l9 8h-3v10h-5v-6H11v6H6V11H3l9-8z"/></svg>
+          </span>
+          <span class="side__text">Головна</span>
+        </a>
+
+        <a class="side__item" href="#">
+          <span class="side__icon">
+            <svg viewBox="0 0 24 24"><path d="M10 8l6 4-6 4V8zm-6 3h4v2H4v-2zm0-5h4v2H4V6zm0 10h4v2H4v-2zm9-13h7v2h-7V3zm0 18h7v2h-7v-2z"/></svg>
+          </span>
+          <span class="side__text">YouTube Shorts</span>
+        </a>
+
+        <a class="side__item" href="#">
+          <span class="side__icon">
+            <svg viewBox="0 0 24 24"><path d="M20 8a4 4 0 00-4-4H4v16h12a4 4 0 004-4V8zm-2 8a2 2 0 01-2 2H6V6h10a2 2 0 012 2v8z"/></svg>
+          </span>
+          <span class="side__text">Підписки</span>
+        </a>
+
+        <div class="side__divider"></div>
+
+        <div class="side__section-title">Ви</div>
+        <a class="side__item" href="#"><span class="side__icon">👤</span><span class="side__text">Ваш канал</span></a>
+        <a class="side__item" href="#"><span class="side__icon">🕘</span><span class="side__text">Історія</span></a>
+        <a class="side__item" href="#"><span class="side__icon">🎞️</span><span class="side__text">Ваші відео</span></a>
+        <a class="side__item" href="#"><span class="side__icon">⏱️</span><span class="side__text">Переглянути пізніше</span></a>
+        <a class="side__item" href="#"><span class="side__icon">⬇️</span><span class="side__text">Завантаження</span></a>
+
+        <div class="side__divider"></div>
+
+        <div class="side__section-title">Підписки</div>
+        <a class="side__item" href="#"><span class="side__dot side__dot--r"></span><span class="side__text">ROZETKA</span></a>
+        <a class="side__item" href="#"><span class="side__dot side__dot--b"></span><span class="side__text">Канал #2</span></a>
+        <a class="side__item" href="#"><span class="side__dot side__dot--g"></span><span class="side__text">Канал #3</span></a>
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      <!-- CHIPS -->
+      <div class="chips">
+        <button class="chip chip--active">Усі</button>
+        <button class="chip">Ігри</button>
+        <button class="chip">Музика</button>
+        <button class="chip">Прямі трансляції</button>
+        <button class="chip">Новини</button>
+        <button class="chip">Меми</button>
+        <button class="chip">Освіта</button>
+        <button class="chip">Дизайн</button>
+        <button class="chip">Мультфільми</button>
+        <button class="chip">Нещодавні</button>
+      </div>
+
+      <!-- GRID (FLEX) -->
+      <section class="feed">
+        <!-- card -->
+        <article class="video">
+          <a class="video__thumb" href="#">
+            <div class="thumb thumb--1"></div>
+            <span class="time">12:30</span>
+          </a>
+          <div class="video__info">
+            <div class="ch-ava">A</div>
+            <div class="meta">
+              <h3 class="title">Як зробити YouTube layout на Flexbox (приклад заголовка)</h3>
+              <p class="ch">Channel Name</p>
+              <p class="stats">123 тис. переглядів • 2 дні тому</p>
+            </div>
+            <button class="kebab" aria-label="More">
+              <svg viewBox="0 0 24 24"><path d="M12 7a2 2 0 110-4 2 2 0 010 4zm0 7a2 2 0 110-4 2 2 0 010 4zm0 7a2 2 0 110-4 2 2 0 010 4z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <article class="video">
+          <a class="video__thumb" href="#">
+            <div class="thumb thumb--2"></div>
+            <span class="time">8:14</span>
+          </a>
+          <div class="video__info">
+            <div class="ch-ava">B</div>
+            <div class="meta">
+              <h3 class="title">Тренди веб-дизайну 2025 — коротко і по суті</h3>
+              <p class="ch">Design Lab</p>
+              <p class="stats">70 тис. переглядів • 1 тиждень тому</p>
+            </div>
+            <button class="kebab" aria-label="More">
+              <svg viewBox="0 0 24 24"><path d="M12 7a2 2 0 110-4 2 2 0 010 4zm0 7a2 2 0 110-4 2 2 0 010 4zm0 7a2 2 0 110-4 2 2 0 010 4z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <article class="video">
+          <a class="video__thumb" href="#">
+            <div class="thumb thumb--3"></div>
+            <span class="time">24:47</span>
+          </a>
+          <div class="video__info">
+            <div class="ch-ava">C</div>
+            <div class="meta">
+              <h3 class="title">Новини дня: головні події та аналітика</h3>
+              <p class="ch">News & Media</p>
+              <p class="stats">1,2 млн переглядів • 3 місяці тому</p>
+            </div>
+            <button class="kebab" aria-label="More">
+              <svg viewBox="0 0 24 24"><path d="M12 7a2 2 0 110-4 2 2 0 010 4zm0 7a2 2 0 110-4 2 2 0 010 4zm0 7a2 2 0 110-4 2 2 0 010 4z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <article class="video">
+          <a class="video__thumb" href="#">
+            <div class="thumb thumb--4"></div>
+            <span class="time">6:05</span>
+          </a>
+          <div class="video__info">
+            <div class="ch-ava">D</div>
+            <div class="meta">
+              <h3 class="title">ТОП 10 лайфхаків для навчання</h3>
+              <p class="ch">Study UA</p>
+              <p class="stats">420 тис. переглядів • 5 год тому</p>
+            </div>
+            <button class="kebab" aria-label="More">
+              <svg viewBox="0 0 24 24"><path d="M12 7a2 2 0 110-4 2 2 0 010 4zm0 7a2 2 0 110-4 2 2 0 010 4zm0 7a2 2 0 110-4 2 2 0 010 4z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <article class="video">
+          <a class="video__thumb" href="#">
+            <div class="thumb thumb--5"></div>
+            <span class="time">31:22</span>
+          </a>
+          <div class="video__info">
+            <div class="ch-ava">E</div>
+            <div class="meta">
+              <h3 class="title">Розбір задач з алгоритмів: від простого до складного</h3>
+              <p class="ch">CS Master</p>
+              <p class="stats">98 тис. переглядів • 4 дні тому</p>
+            </div>
+            <button class="kebab" aria-label="More">
+              <svg viewBox="0 0 24 24"><path d="M12 7a2 2 0 110-4 2 2 0 010 4zm0 7a2 2 0 110-4 2 2 0 010 4zm0 7a2 2 0 110-4 2 2 0 010 4z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <article class="video">
+          <a class="video__thumb" href="#">
+            <div class="thumb thumb--6"></div>
+            <span class="time">10:09</span>
+          </a>
+          <div class="video__info">
+            <div class="ch-ava">F</div>
+            <div class="meta">
+              <h3 class="title">Фронтенд за 10 хвилин: Flexbox найважливіше</h3>
+              <p class="ch">Frontend UA</p>
+              <p class="stats">12 тис. переглядів • 1 день тому</p>
+            </div>
+            <button class="kebab" aria-label="More">
+              <svg viewBox="0 0 24 24"><path d="M12 7a2 2 0 110-4 2 2 0 010 4zm0 7a2 2 0 110-4 2 2 0 010 4zm0 7a2 2 0 110-4 2 2 0 010 4z"/></svg>
+            </button>
+          </div>
+        </article>
+      </section>
+
+      <!-- SHORTS -->
+      <section class="shorts">
+        <div class="shorts__head">
+          <h2 class="shorts__title">YouTube Shorts</h2>
+        </div>
+
+        <div class="shorts__row">
+          <a class="short" href="#">
+            <div class="short__thumb s1"></div>
+            <div class="short__name">Short #1</div>
+            <div class="short__views">1,1 млн</div>
+          </a>
+          <a class="short" href="#">
+            <div class="short__thumb s2"></div>
+            <div class="short__name">Short #2</div>
+            <div class="short__views">420 тис.</div>
+          </a>
+          <a class="short" href="#">
+            <div class="short__thumb s3"></div>
+            <div class="short__name">Short #3</div>
+            <div class="short__views">80 тис.</div>
+          </a>
+          <a class="short" href="#">
+            <div class="short__thumb s4"></div>
+            <div class="short__name">Short #4</div>
+            <div class="short__views">2,4 млн</div>
+          </a>
+          <a class="short" href="#">
+            <div class="short__thumb s5"></div>
+            <div class="short__name">Short #5</div>
+            <div class="short__views">150 тис.</div>
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
